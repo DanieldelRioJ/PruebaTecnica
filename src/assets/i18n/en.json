@@ -1,0 +1,11 @@
+{
+	"DARK_MODE": "Dark mode",
+	"LOGIN": {
+		"API_KEY": "Api Key",
+		"HELP": "Don't know how to get the ApiKey? Click here.",
+		"LOGIN": "Log In",
+		"LOGIN_REQUIRED": "It is mandatory to enter an API KEY",
+		"SUBTITLE": "Add the ApiKey to continue",
+		"TITLE": "Login"
+	}
+}

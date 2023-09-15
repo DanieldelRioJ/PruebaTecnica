@@ -1,0 +1,30 @@
+<mat-card
+  class="flex flex-col gap-3 inset-y-1/2 inset-x-1/2 p-8 lg:w-1/4 md:w-1/2 w-10/12"
+>
+  <mat-card-header>
+    <mat-card-title>{{ 'LOGIN.TITLE' | translate }}</mat-card-title>
+    <mat-card-subtitle>{{ 'LOGIN.SUBTITLE' | translate }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content class="w-full">
+    <app-login-card-form></app-login-card-form>
+  </mat-card-content>
+  <mat-card-actions>
+    <div class="flex flex-col gap-1">
+      <a
+        class="link"
+        href="https://www.visualcrossing.com/sign-up"
+        target="_blank"
+        >{{ 'LOGIN.HELP' | translate }}</a
+      >
+      <button
+        mat-flat-button
+        color="accent"
+        [disableRipple]="true"
+        [disabled]="(formValid$ | async) !== true"
+        (click)="login()"
+      >
+        {{ 'LOGIN.LOGIN' | translate }}
+      </button>
+    </div>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,11 @@
+mat-card{
+  text-align: center;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+
+  a{
+    font-size: 0.8rem;
+  }
+}

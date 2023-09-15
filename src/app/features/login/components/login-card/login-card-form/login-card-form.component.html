@@ -1,0 +1,18 @@
+<form class="example-form" [formGroup]="form">
+  <mat-form-field class="w-full">
+    <mat-label>{{ labels.API_KEY | translate }}</mat-label>
+    <input
+      matInput
+      [formControlName]="controls.API_KEY"
+      placeholder="ASDHRUWEIRJFKWJEKSPWOEJFH"
+    />
+    <mat-error
+      *ngIf="
+        form.get(controls.API_KEY)?.hasError('required') ||
+        form.get(controls.API_KEY)?.hasError('minLength')
+      "
+    >
+      {{ 'LOGIN.LOGIN_REQUIRED' | translate }}
+    </mat-error>
+  </mat-form-field>
+</form>

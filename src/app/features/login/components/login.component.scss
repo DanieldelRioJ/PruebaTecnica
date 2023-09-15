@@ -1,0 +1,8 @@
+@mixin _login-container{
+  background-image: url("/src/assets/img/login/login-wallpaper-dark.jpg");
+
+}
+
+.login-container{
+  @include _login-container;
+}
