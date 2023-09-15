@@ -1,0 +1,11 @@
+{
+	"DARK_MODE": "Mode sombre",
+	"LOGIN": {
+		"API_KEY": "Api Key",
+		"HELP": "Vous ne savez pas comment obtenir l'ApiKey ? Cliquez ici.",
+		"LOGIN": "Commencer la session",
+		"LOGIN_REQUIRED": "Il est obligatoire de saisir une CLÉ API",
+		"SUBTITLE": "Ajoutez l'ApiKey pour continuer",
+		"TITLE": "Se connecter"
+	}
+}

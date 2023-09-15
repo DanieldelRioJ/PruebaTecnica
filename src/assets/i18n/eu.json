@@ -1,0 +1,11 @@
+{
+	"DARK_MODE": "Modu iluna",
+	"LOGIN": {
+		"API_KEY": "Api Key",
+		"HELP": "Ez dakizu nola lortu ApiKey? Klikatu hemen.",
+		"LOGIN": "Sartu",
+		"LOGIN_REQUIRED": "Derrigorrezkoa da API KEY bat sartzea",
+		"SUBTITLE": "Gehitu ApiKey jarraitzeko",
+		"TITLE": "Saioa hasi"
+	}
+}
