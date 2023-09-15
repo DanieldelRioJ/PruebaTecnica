@@ -5,6 +5,7 @@
 		"HELP": "Don't know how to get the ApiKey? Click here.",
 		"LOGIN": "Log In",
 		"LOGIN_REQUIRED": "It is mandatory to enter an API KEY",
+		"SESSION_CLOSED": "The session has been closed",
 		"SUBTITLE": "Add the ApiKey to continue",
 		"TITLE": "Login"
 	}

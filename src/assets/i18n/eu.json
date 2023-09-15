@@ -5,6 +5,7 @@
 		"HELP": "Ez dakizu nola lortu ApiKey? Klikatu hemen.",
 		"LOGIN": "Sartu",
 		"LOGIN_REQUIRED": "Derrigorrezkoa da API KEY bat sartzea",
+		"SESSION_CLOSED": "Saioa itxi egin da",
 		"SUBTITLE": "Gehitu ApiKey jarraitzeko",
 		"TITLE": "Saioa hasi"
 	}

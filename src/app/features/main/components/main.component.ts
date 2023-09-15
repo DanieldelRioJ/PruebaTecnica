@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { WeatherApiService } from '../services/weather-api.service';
+import { LogoutButtonComponent } from '../../../shared/logout-button/logout-button.component';
 @Component({
   selector: 'app-main',
   standalone: true,
@@ -13,7 +14,8 @@ import { WeatherApiService } from '../services/weather-api.service';
     MatButtonModule,
     MatIconModule,
     MatToolbarModule,
-    MatTooltipModule
+    MatTooltipModule,
+    LogoutButtonComponent
   ],
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss'],

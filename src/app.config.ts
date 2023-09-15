@@ -14,6 +14,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { routes } from './app/routes';
 import { ApplicationConfig } from '@angular/platform-browser';
 import { keyInterceptor } from './app/core/interceptors/key.interceptor';
+import { ToastrModule } from 'ngx-toastr';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -34,6 +35,7 @@ export const appConfig: ApplicationConfig = {
         },
         defaultLanguage: 'en'
       })
-    )
+    ),
+    importProvidersFrom(ToastrModule.forRoot())
   ]
 };

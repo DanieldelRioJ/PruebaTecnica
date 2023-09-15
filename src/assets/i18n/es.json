@@ -5,6 +5,7 @@
 		"HELP": "¿No sabes como obtener la ApiKey? Clica aquí.",
 		"LOGIN": "Iniciar sesión",
 		"LOGIN_REQUIRED": "Es obligatorio introducir una API KEY",
+		"SESSION_CLOSED": "Se ha cerrado la sesión",
 		"SUBTITLE": "Añade la ApiKey para continuar",
 		"TITLE": "Inicio sesión"
 	}
