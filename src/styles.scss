@@ -2,7 +2,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import "styles/colors";
+//@import "styles/colors";
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import 'ngx-toastr/toastr';
 
 html, body { height: 100%; }
