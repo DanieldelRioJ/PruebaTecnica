@@ -12,6 +12,11 @@ export const MainOutputTableColumns: Column[] = [
     suffix: 'ºC'
   },
   {
+    id: 'feelslike',
+    name: 'MAIN.TABLE.COLUMNS.FEELSLIKE',
+    suffix: 'ºC'
+  },
+  {
     id: 'humidity',
     name: 'MAIN.TABLE.COLUMNS.HUMIDITY',
     suffix: '%'
@@ -20,11 +25,6 @@ export const MainOutputTableColumns: Column[] = [
     id: 'precipprob',
     name: 'MAIN.TABLE.COLUMNS.PRECIP',
     suffix: '%'
-  },
-  {
-    id: 'feelslike',
-    name: 'MAIN.TABLE.COLUMNS.FEELSLIKE',
-    suffix: 'ºC'
   },
   {
     id: 'windspeed',

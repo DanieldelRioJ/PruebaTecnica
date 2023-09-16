@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { TranslationService } from './core/services/translation.service';
 
 @Component({
   standalone: true,
@@ -9,4 +10,6 @@ import { RouterModule } from '@angular/router';
   imports: [RouterModule],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent {}
+export class AppComponent {
+  constructor(private readonly _translationService: TranslationService) {}
+}
