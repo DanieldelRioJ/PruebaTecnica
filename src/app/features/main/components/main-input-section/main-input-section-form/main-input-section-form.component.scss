@@ -1,0 +1,21 @@
+.search-button:not([disabled]){
+  animation: button-highlighted 1s ease-in-out 0s infinite alternate-reverse;
+}
+
+@keyframes button-highlighted {
+  from{
+    box-shadow: none;
+  }
+  to{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+}
+form{
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+    gap: 0;
+    button{
+      width: 100%;
+    }
+  }
+}

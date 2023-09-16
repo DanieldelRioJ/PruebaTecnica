@@ -1,10 +1,42 @@
-<mat-form-field>
-  <mat-label>Enter a date range</mat-label>
-  <mat-date-range-input [rangePicker]="picker">
-    <input matStartDate placeholder="Start date" />
-    <input matEndDate placeholder="End date" />
-  </mat-date-range-input>
-  <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
-  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-  <mat-date-range-picker #picker></mat-date-range-picker>
-</mat-form-field>
+<form [formGroup]="form" class="flex gap-8 px-8">
+  <mat-form-field class="w-full">
+    <mat-label>Enter a date range</mat-label>
+    <mat-date-range-input [rangePicker]="picker">
+      <input
+        matStartDate
+        [formControlName]="controls.FROM"
+        placeholder="Start date"
+      />
+      <input
+        matEndDate
+        [formControlName]="controls.TO"
+        placeholder="End date"
+      />
+    </mat-date-range-input>
+    <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-date-range-picker #picker></mat-date-range-picker>
+  </mat-form-field>
+  <mat-form-field class="w-full">
+    <mat-label>Location</mat-label>
+    <input
+      matInput
+      [formControlName]="controls.LOCATION"
+      placeholder="A Coruña"
+    />
+    <mat-error *ngIf="form.get(controls.LOCATION)!.hasError('required')">
+      Please enter a valid email address
+    </mat-error>
+  </mat-form-field>
+  <button
+    mat-flat-button
+    color="primary"
+    class="h-full p-2 self-center shrink-0 search-button"
+    [disableRipple]="true"
+    [disabled]="!form.valid"
+    (click)="search()"
+  >
+    <mat-icon>search</mat-icon>
+    {{ 'LOGIN.LOGIN' | translate }}
+  </button>
+</form>

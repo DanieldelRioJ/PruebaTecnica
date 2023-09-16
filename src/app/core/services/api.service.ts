@@ -9,6 +9,6 @@ export class ApiService {
 
   get<T>(url: string, queryParams: any) {
     const params = new HttpParams({ fromObject: queryParams });
-    return this._httpClient.get<string>(url, { params: params });
+    return this._httpClient.get<T>(url, { params: params });
   }
 }

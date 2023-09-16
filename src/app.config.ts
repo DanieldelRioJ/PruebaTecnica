@@ -15,12 +15,14 @@ import { routes } from './app/routes';
 import { ApplicationConfig } from '@angular/platform-browser';
 import { keyInterceptor } from './app/core/interceptors/key.interceptor';
 import { ToastrModule } from 'ngx-toastr';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 export const appConfig: ApplicationConfig = {
   providers: [
+    { provide: MAT_DATE_LOCALE, useValue: 'es-ES' },
     provideRouter(routes),
     provideHttpClient(withInterceptors([keyInterceptor])),
     provideAnimations(),
