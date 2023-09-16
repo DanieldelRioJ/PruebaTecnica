@@ -8,5 +8,25 @@
 		"SESSION_CLOSED": "S'ha tancat la sessió",
 		"SUBTITLE": "Afegeix l'ApiKey per continuar",
 		"TITLE": "Inici sessió"
+	},
+	"MAIN": {
+		"FORM": {
+			"DATE_RANGE": "Rang de dates",
+			"END_DATE": "Data Fi",
+			"LOCATION": "Ubicació",
+			"NOT_VALID": "La query introduïda no és correcta",
+			"START_DATE": "Data inici"
+		},
+		"TABLE": {
+			"COLUMNS": {
+				"DATETIME": "Dia",
+				"FEELSLIKE": "Sensació tèrmica",
+				"HUMIDITY": "Humitat",
+				"PRECIP": "Probabilitat Precipitacions",
+				"SOLAR_RADIATION": "Solar radiació",
+				"TEMPERATURE": "Temperatura",
+				"WINDSPEED": "Velocitat del vent"
+			}
+		}
 	}
 }

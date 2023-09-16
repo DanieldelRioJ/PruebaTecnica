@@ -1,6 +1,5 @@
 import { isValidDate } from 'rxjs/internal/util/isDate';
 export function fromFormToModel(object: any) {
-  console.log(object);
   const entries = Object.entries(object).map(([key, value]) => {
     if (isValidDate(value)) {
       value = `${value.getFullYear()}-${('0' + (value.getMonth() + 1)).slice(
@@ -23,6 +22,5 @@ export function fromModelToForm(object: any) {
 
     return [key, value];
   });
-  console.log(Object.fromEntries(entries));
   return Object.fromEntries(entries);
 }

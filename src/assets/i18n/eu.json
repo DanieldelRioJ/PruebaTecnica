@@ -8,5 +8,25 @@
 		"SESSION_CLOSED": "Saioa itxi egin da",
 		"SUBTITLE": "Gehitu ApiKey jarraitzeko",
 		"TITLE": "Saioa hasi"
+	},
+	"MAIN": {
+		"FORM": {
+			"DATE_RANGE": "Data tartea",
+			"END_DATE": "Amaiera data",
+			"LOCATION": "Kokapena",
+			"NOT_VALID": "Sartutako kontsulta ez da zuzena",
+			"START_DATE": "Hasiera data"
+		},
+		"TABLE": {
+			"COLUMNS": {
+				"DATETIME": "Egun",
+				"FEELSLIKE": "Sentsazio termikoa",
+				"HUMIDITY": "Hezetasuna",
+				"PRECIP": "Prezipitazioaren probabilitatea",
+				"SOLAR_RADIATION": "Eguzki-erradiazioa",
+				"TEMPERATURE": "Tenperatura",
+				"WINDSPEED": "Haizearen abiadura"
+			}
+		}
 	}
 }

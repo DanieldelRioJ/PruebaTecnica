@@ -8,5 +8,25 @@
 		"SESSION_CLOSED": "A sesión foi pechada",
 		"SUBTITLE": "Engade ApiKey para continuar",
 		"TITLE": "Acceder"
+	},
+	"MAIN": {
+		"FORM": {
+			"DATE_RANGE": "Intervalo de datas",
+			"END_DATE": "Data de finalización",
+			"LOCATION": "Localización",
+			"NOT_VALID": "A consulta introducida non é correcta",
+			"START_DATE": "Data de inicio"
+		},
+		"TABLE": {
+			"COLUMNS": {
+				"DATETIME": "Día",
+				"FEELSLIKE": "Sensación térmica",
+				"HUMIDITY": "Humidade",
+				"PRECIP": "Probabilidade de precipitación",
+				"SOLAR_RADIATION": "Radiación solar",
+				"TEMPERATURE": "Temperatura",
+				"WINDSPEED": "Velocidade do vento"
+			}
+		}
 	}
 }

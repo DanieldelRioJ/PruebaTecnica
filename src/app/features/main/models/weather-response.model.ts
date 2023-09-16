@@ -8,8 +8,8 @@ export interface IWeatherResponse {
 export interface IWeatherDay {
   datetime: string;
   datetimeEpoch: number;
-  tempMax: number;
-  tempMin: number;
+  tempmax: number;
+  tempmin: number;
   temp: number;
   feelslikemax: number;
   feelslikemin: number;

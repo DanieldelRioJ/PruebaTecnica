@@ -10,7 +10,7 @@ import { MainInputSectionComponent } from './main-input-section/main-input-secti
 import { MainFormService } from '../services/main-form.service';
 import { ActivatedRoute } from '@angular/router';
 import { UnsubscribeDirective } from '../../../core/directives/unsubscribe.directive';
-import { combineLatest, filter, map, switchMap, takeUntil, tap } from 'rxjs';
+import { catchError, filter, of, switchMap, takeUntil, tap } from 'rxjs';
 import { MainModelService } from '../services/main-model.service';
 import { ToastrService } from 'ngx-toastr';
 import {
@@ -18,17 +18,22 @@ import {
   fromModelToForm
 } from '../../../core/utils/api-parser';
 import { LocationService } from '../../../core/services/location.service';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { HttpErrorResponse } from '@angular/common/http';
+import { MainOutputSectionComponent } from './main-output-section/main-output-section.component';
 @Component({
   selector: 'app-main',
   standalone: true,
   imports: [
     CommonModule,
+    TranslateModule,
     MatButtonModule,
     MatIconModule,
     MatToolbarModule,
     MatTooltipModule,
     LogoutButtonComponent,
-    MainInputSectionComponent
+    MainInputSectionComponent,
+    MainOutputSectionComponent
   ],
   providers: [MainFormService, MainModelService],
   templateUrl: './main.component.html',
@@ -42,7 +47,8 @@ export class MainComponent extends UnsubscribeDirective implements OnInit {
     private readonly _toastrService: ToastrService,
     private readonly _mainFormService: MainFormService,
     private readonly _mainModelService: MainModelService,
-    private readonly _weatherApiService: WeatherApiService
+    private readonly _weatherApiService: WeatherApiService,
+    private readonly _translateService: TranslateService
   ) {
     super();
   }
@@ -52,47 +58,38 @@ export class MainComponent extends UnsubscribeDirective implements OnInit {
   }
 
   private _listenToQueryParams() {
-    combineLatest([
-      this._activatedRoute.queryParams,
-      this._locationService.location$.pipe(
-        map((location) =>
-          location ? `${location.latitude}, ${location.longitude}` : null
-        )
-      )
-    ])
+    this._activatedRoute.queryParams
       .pipe(
-        tap(([_, location]) => {
-          if (location != null) {
-            this._mainFormService.mainInputForm.patchValue(
-              fromModelToForm({ location })
-            );
-          }
-        }),
-        map(([queryParams, location]) => {
-          return { ...queryParams, location };
-        }),
-        filter((queryParams) => Object.values(queryParams).length !== 0),
         tap((queryParams) => {
           this._mainFormService.mainInputForm.patchValue(
             fromModelToForm(queryParams)
           );
+          this._translateService.instant('MAIN.FORM.NOT_VALID');
+        }),
+        filter(
+          (queryParams) =>
+            Object.values(queryParams).length ==
+            Object.values(this._mainFormService.mainInputForm.controls).length
+        ),
+        tap(() => {
           if (!this._mainFormService.mainInputForm.valid) {
-            this._toastrService.error('La query introducida no es correcta');
+            this._translateService.instant('MAIN.FORM.NOT_VALID');
           }
         }),
         filter(() => this._mainFormService.mainInputForm.valid),
+        tap(() => (this._mainModelService.data = 'loading')),
         switchMap((queryParams) =>
-          this._weatherApiService.getData(fromFormToModel(queryParams))
+          this._weatherApiService.getData(fromFormToModel(queryParams)).pipe(
+            catchError((e: HttpErrorResponse) => {
+              this._toastrService.error(e.error);
+              return of(null);
+            })
+          )
         ),
         takeUntil(this._unsubscribe$)
       )
-      .subscribe({
-        next: (weatherResponse) => {
-          this._mainModelService.data = weatherResponse;
-        },
-        error: (error) => {
-          this._toastrService.error(error.error);
-        }
+      .subscribe((weatherResponse) => {
+        this._mainModelService.data = weatherResponse;
       });
   }
 }

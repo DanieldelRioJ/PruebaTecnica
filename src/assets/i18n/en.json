@@ -8,5 +8,25 @@
 		"SESSION_CLOSED": "The session has been closed",
 		"SUBTITLE": "Add the ApiKey to continue",
 		"TITLE": "Login"
+	},
+	"MAIN": {
+		"FORM": {
+			"DATE_RANGE": "Date range",
+			"END_DATE": "End date",
+			"LOCATION": "Location",
+			"NOT_VALID": "The query entered is not correct",
+			"START_DATE": "Start date"
+		},
+		"TABLE": {
+			"COLUMNS": {
+				"DATETIME": "Day",
+				"FEELSLIKE": "Thermal sensation",
+				"HUMIDITY": "Humidity",
+				"PRECIP": "Precipitation probability",
+				"SOLAR_RADIATION": "Solar radiation",
+				"TEMPERATURE": "Temperature",
+				"WINDSPEED": "Wind Speed"
+			}
+		}
 	}
 }

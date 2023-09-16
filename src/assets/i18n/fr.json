@@ -8,5 +8,25 @@
 		"SESSION_CLOSED": "La séance est close",
 		"SUBTITLE": "Ajoutez l'ApiKey pour continuer",
 		"TITLE": "Se connecter"
+	},
+	"MAIN": {
+		"FORM": {
+			"DATE_RANGE": "Plage de dates",
+			"END_DATE": "Date de fin",
+			"LOCATION": "Emplacement",
+			"NOT_VALID": "La requête saisie n'est pas correcte",
+			"START_DATE": "La date de début"
+		},
+		"TABLE": {
+			"COLUMNS": {
+				"DATETIME": "Jour",
+				"FEELSLIKE": "Sensation thermique",
+				"HUMIDITY": "Humidité",
+				"PRECIP": "Probabilité de précipitations",
+				"SOLAR_RADIATION": "Radiation solaire",
+				"TEMPERATURE": "La température",
+				"WINDSPEED": "Vitesse du vent"
+			}
+		}
 	}
 }
