@@ -15,7 +15,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { MatIconModule } from '@angular/material/icon';
 import { Router } from '@angular/router';
 import { MainRoutes } from '../../../../../routes';
-import { fromFormToModel } from '../../../../../core/utils/api-parser';
+import { fromFormToModel } from '../../../../../shared/utils/api-parser';
 
 @Component({
   selector: 'app-main-input-section-form',

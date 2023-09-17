@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { MainInputSectionFormControls } from '../components/main-input-section/main-input-section-form/main-input-section-form.config';
-import { isDate } from '../../../core/utils/date-validator';
+import { isDate } from '../../../shared/utils/date-validator';
 
 @Injectable()
 export class MainFormService {

@@ -12,7 +12,7 @@ import { IWeatherDay } from '../../../models/weather-response.model';
 import { MainModelService } from '../../../services/main-model.service';
 import { UnsubscribeDirective } from '../../../../../shared/directives/unsubscribe.directive';
 import { filter, map, takeUntil } from 'rxjs';
-import { checkIndividualModelType } from '../../../../../core/types/individual-model.type';
+import { checkIndividualModelType } from '../../../../../shared/types/individual-model.type';
 import { MainOutputTableColumns } from './main-output-table.config';
 import { TranslateModule } from '@ngx-translate/core';
 import { MatSort, MatSortModule } from '@angular/material/sort';

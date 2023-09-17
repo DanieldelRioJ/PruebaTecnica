@@ -16,7 +16,7 @@ import { ToastrService } from 'ngx-toastr';
 import {
   fromFormToModel,
   fromModelToForm
-} from '../../../core/utils/api-parser';
+} from '../../../shared/utils/api-parser';
 import { LocationService } from '../../../core/services/location.service';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { HttpErrorResponse } from '@angular/common/http';
