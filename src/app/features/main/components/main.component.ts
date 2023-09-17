@@ -9,7 +9,7 @@ import { LogoutButtonComponent } from '../../../shared/logout-button/logout-butt
 import { MainInputSectionComponent } from './main-input-section/main-input-section.component';
 import { MainFormService } from '../services/main-form.service';
 import { ActivatedRoute } from '@angular/router';
-import { UnsubscribeDirective } from '../../../core/directives/unsubscribe.directive';
+import { UnsubscribeDirective } from '../../../shared/directives/unsubscribe.directive';
 import { catchError, filter, of, switchMap, takeUntil, tap } from 'rxjs';
 import { MainModelService } from '../services/main-model.service';
 import { ToastrService } from 'ngx-toastr';

@@ -10,7 +10,7 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { IWeatherDay } from '../../../models/weather-response.model';
 import { MainModelService } from '../../../services/main-model.service';
-import { UnsubscribeDirective } from '../../../../../core/directives/unsubscribe.directive';
+import { UnsubscribeDirective } from '../../../../../shared/directives/unsubscribe.directive';
 import { filter, map, takeUntil } from 'rxjs';
 import { checkIndividualModelType } from '../../../../../core/types/individual-model.type';
 import { MainOutputTableColumns } from './main-output-table.config';
