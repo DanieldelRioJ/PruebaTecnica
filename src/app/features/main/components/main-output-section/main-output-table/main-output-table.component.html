@@ -1,12 +1,5 @@
 <div class="relative mat-elevation-z2">
-  <div
-    *ngIf="loading$ | async"
-    class="absolute w-full h-full backdrop-blur z-10"
-  >
-    <div class="absolute top-1/2 left-1/2 -translate-x-2/4 -translate-y-2/4">
-      <mat-spinner></mat-spinner>
-    </div>
-  </div>
+  <app-loading [loading$]="loading$"></app-loading>
   <div class="table-responsive">
     <table mat-table matSort [dataSource]="dataSource">
       <ng-container

@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
-import { combineLatest, filter, map, Observable } from 'rxjs';
+import { combineLatest, filter, map, Observable, startWith } from 'rxjs';
 import { Chart, ChartModule } from 'angular-highcharts';
 import { MainModelService } from '../../../../services/main-model.service';
 import { checkIndividualModelType } from '../../../../../../shared/types/individual-model.type';
@@ -8,17 +8,21 @@ import { IWeatherDay } from '../../../../models/weather-response.model';
 import { ThemeService } from '../../../../../../core/services/theme.service';
 import { TranslationService } from '../../../../../../core/services/translation.service';
 import { TranslateService } from '@ngx-translate/core';
+import { LoadingComponent } from '../../../../../../shared/components/loading/loading.component';
 
 @Component({
   selector: 'app-main-output-windspeed-chart',
   standalone: true,
-  imports: [CommonModule, ChartModule],
+  imports: [CommonModule, ChartModule, LoadingComponent],
   templateUrl: './main-output-windspeed-chart.component.html',
   styleUrls: ['./main-output-windspeed-chart.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MainOutputWindspeedChartComponent implements OnInit {
   chart$?: Observable<Chart>;
+  loading$ = this._mainModelService.data$.pipe(
+    map((data) => data === 'loading')
+  );
   constructor(
     private _mainModelService: MainModelService,
     private _themeService: ThemeService,
@@ -42,7 +46,8 @@ export class MainOutputWindspeedChartComponent implements OnInit {
       map((data) => {
         const days = data.days;
         return this._chartBuilder(days);
-      })
+      }),
+      startWith(new Chart())
     );
   }
 

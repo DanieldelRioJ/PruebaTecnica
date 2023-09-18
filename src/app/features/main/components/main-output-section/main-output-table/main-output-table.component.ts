@@ -21,6 +21,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { TranslationService } from '../../../../../core/services/translation.service';
+import { LoadingComponent } from '../../../../../shared/components/loading/loading.component';
 
 @Component({
   selector: 'app-main-output-table',
@@ -31,7 +32,8 @@ import { TranslationService } from '../../../../../core/services/translation.ser
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    LoadingComponent
   ],
   templateUrl: './main-output-table.component.html',
   styleUrls: ['./main-output-table.component.scss'],

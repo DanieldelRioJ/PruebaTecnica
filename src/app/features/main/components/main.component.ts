@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnInit,
+  Provider
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -24,6 +29,16 @@ import { MainOutputSectionComponent } from './main-output-section/main-output-se
 import { TranslationDropdownComponent } from '../../../shared/components/translation-dropdown/translation-dropdown.component';
 import { ThemeSelectorComponent } from '../../../shared/components/theme-selector/theme-selector.component';
 import { MainInputSectionFormControls } from './main-input-section/main-input-section-form/main-input-section-form.config';
+import { WeatherApiInterfaceService } from '../services/weather-api-interface.service';
+import { environment } from '../../../../environments/environment';
+import { WeatherApiMockedService } from '../services/weather-api-mocked.service';
+
+const apiWeatherProvider: Provider = {
+  provide: WeatherApiInterfaceService,
+  useClass: environment.USE_MOCK_DATA
+    ? WeatherApiMockedService
+    : WeatherApiService
+};
 @Component({
   selector: 'app-main',
   standalone: true,
@@ -40,7 +55,7 @@ import { MainInputSectionFormControls } from './main-input-section/main-input-se
     TranslationDropdownComponent,
     ThemeSelectorComponent
   ],
-  providers: [MainFormService, MainModelService],
+  providers: [apiWeatherProvider, MainFormService, MainModelService],
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -52,7 +67,7 @@ export class MainComponent extends UnsubscribeDirective implements OnInit {
     private readonly _toastrService: ToastrService,
     private readonly _mainFormService: MainFormService,
     private readonly _mainModelService: MainModelService,
-    private readonly _weatherApiService: WeatherApiService,
+    private readonly _weatherApiService: WeatherApiInterfaceService,
     private readonly _translateService: TranslateService
   ) {
     super();
