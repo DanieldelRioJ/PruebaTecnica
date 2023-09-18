@@ -84,4 +84,4 @@ You just need to run on the server inside this directory the following command:
 
 <a id="contact"></a>
 ## 4. Contact
-If you need help or have any suggestions, please contact ```daniel.delrio.juncal@gmail.com```
+If you need help or have any suggestions, please contact [daniel.delrio.juncal@gmail.com](mailto:daniel.delrio.juncal@gmail.com)
