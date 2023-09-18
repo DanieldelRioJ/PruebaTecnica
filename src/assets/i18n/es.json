@@ -35,6 +35,7 @@
 			"SEARCH": "Buscar",
 			"START_DATE": "Fecha inicio"
 		},
+		"MAKE_QUERY_HELP": "Haz una consulta para ver datos",
 		"TABLE": {
 			"COLUMNS": {
 				"DATETIME": "Día",
@@ -45,7 +46,8 @@
 				"TEMPERATURE": "Temperatura",
 				"WINDSPEED": "Velocidad del viento"
 			}
-		}
+		},
+		"TITLE": "Consulta el tiempo"
 	},
 	"SHARED": {
 		"LANG": "Idioma",

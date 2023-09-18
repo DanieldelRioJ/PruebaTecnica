@@ -23,6 +23,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { MainOutputSectionComponent } from './main-output-section/main-output-section.component';
 import { TranslationDropdownComponent } from '../../../shared/components/translation-dropdown/translation-dropdown.component';
 import { ThemeSelectorComponent } from '../../../shared/components/theme-selector/theme-selector.component';
+import { MainInputSectionFormControls } from './main-input-section/main-input-section-form/main-input-section-form.config';
 @Component({
   selector: 'app-main',
   standalone: true,
@@ -102,7 +103,12 @@ export class MainComponent extends UnsubscribeDirective implements OnInit {
     this._locationService.location$
       .pipe(takeUntil(this._unsubscribe$))
       .subscribe((location) => {
-        if (location != null) {
+        if (
+          location != null &&
+          this._mainFormService.mainInputForm.value[
+            MainInputSectionFormControls.LOCATION
+          ] == null
+        ) {
           this._mainFormService.mainInputForm.patchValue({
             location: `${location.latitude}, ${location.longitude}`
           } as any);

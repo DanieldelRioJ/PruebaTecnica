@@ -35,6 +35,7 @@
 			"SEARCH": "Cercar",
 			"START_DATE": "Data inici"
 		},
+		"MAKE_QUERY_HELP": "Fes una consulta per veure dades",
 		"TABLE": {
 			"COLUMNS": {
 				"DATETIME": "Dia",
@@ -45,7 +46,8 @@
 				"TEMPERATURE": "Temperatura",
 				"WINDSPEED": "Velocitat del vent"
 			}
-		}
+		},
+		"TITLE": "Consulta el temps"
 	},
 	"SHARED": {
 		"LANG": "Idioma",

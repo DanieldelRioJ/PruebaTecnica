@@ -1,2 +1,16 @@
-<app-main-output-chart-section></app-main-output-chart-section>
-<app-main-output-table></app-main-output-table>
+<div *ngIf="noData$ | async; else dataTemplate">
+  <div class="flex justify-center pt-12">
+    <div class="flex flex-col gap-4 items-center">
+      <img
+        class="query-img"
+        src="assets/img/main/query.png"
+        alt="Query helper"
+      />
+      <p class="text-xl">{{ 'MAIN.MAKE_QUERY_HELP' | translate }}</p>
+    </div>
+  </div>
+</div>
+<ng-template #dataTemplate>
+  <app-main-output-chart-section></app-main-output-chart-section>
+  <app-main-output-table></app-main-output-table>
+</ng-template>

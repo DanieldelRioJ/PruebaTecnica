@@ -35,6 +35,7 @@
 			"SEARCH": "Search",
 			"START_DATE": "Start date"
 		},
+		"MAKE_QUERY_HELP": "Make a query to see data",
 		"TABLE": {
 			"COLUMNS": {
 				"DATETIME": "Day",
@@ -45,7 +46,8 @@
 				"TEMPERATURE": "Temperature",
 				"WINDSPEED": "Wind Speed"
 			}
-		}
+		},
+		"TITLE": "Check the weather"
 	},
 	"SHARED": {
 		"LANG": "Language",
