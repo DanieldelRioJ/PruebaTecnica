@@ -28,5 +28,13 @@
 				"WINDSPEED": "Haizearen abiadura"
 			}
 		}
+	},
+	"SHARED": {
+		"LANG": "Hizkuntza",
+		"REQUIRED_FIELDS": "Eremua beharrezkoa da",
+		"THEMES": {
+			"CHANGE_TO_DARK_MODE": "Aldatu modu ilunera",
+			"CHANGE_TO_LIGHT_MODE": "Aldatu argi modura"
+		}
 	}
 }

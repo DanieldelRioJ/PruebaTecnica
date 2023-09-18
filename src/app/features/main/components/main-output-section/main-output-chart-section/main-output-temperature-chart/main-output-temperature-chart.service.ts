@@ -26,6 +26,9 @@ export class MainOutputTemperatureChartService {
         categories: days.map((days) => days.datetime)
       },
       yAxis: {
+        labels: {
+          format: '{value}ºC'
+        },
         title: {
           text: 'Temperature (°C)'
         }

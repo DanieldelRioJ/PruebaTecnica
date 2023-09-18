@@ -11,20 +11,14 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { routes } from './app/routes';
+import { routes } from '../app/routes';
 import { ApplicationConfig } from '@angular/platform-browser';
-import { keyInterceptor } from './app/core/interceptors/key.interceptor';
+import { keyInterceptor } from '../app/core/interceptors/key.interceptor';
 import { ToastrModule } from 'ngx-toastr';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { registerLangLocales } from './lang.config';
 
-import localeEs from '@angular/common/locales/es';
-import localePt from '@angular/common/locales/pt';
-import localeGl from '@angular/common/locales/gl';
-import { registerLocaleData } from '@angular/common';
-
-registerLocaleData(localeEs);
-registerLocaleData(localePt);
-registerLocaleData(localeGl);
+registerLangLocales();
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }

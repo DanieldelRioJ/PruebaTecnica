@@ -21,6 +21,8 @@ import { LocationService } from '../../../core/services/location.service';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { HttpErrorResponse } from '@angular/common/http';
 import { MainOutputSectionComponent } from './main-output-section/main-output-section.component';
+import { TranslationDropdownComponent } from '../../../shared/components/translation-dropdown/translation-dropdown.component';
+import { ThemeSelectorComponent } from '../../../shared/components/theme-selector/theme-selector.component';
 @Component({
   selector: 'app-main',
   standalone: true,
@@ -33,7 +35,9 @@ import { MainOutputSectionComponent } from './main-output-section/main-output-se
     MatTooltipModule,
     LogoutButtonComponent,
     MainInputSectionComponent,
-    MainOutputSectionComponent
+    MainOutputSectionComponent,
+    TranslationDropdownComponent,
+    ThemeSelectorComponent
   ],
   providers: [MainFormService, MainModelService],
   templateUrl: './main.component.html',

@@ -28,5 +28,13 @@
 				"WINDSPEED": "Velocidade do vento"
 			}
 		}
+	},
+	"SHARED": {
+		"LANG": "Idioma",
+		"REQUIRED_FIELDS": "O campo é obrigatório",
+		"THEMES": {
+			"CHANGE_TO_DARK_MODE": "Mudar para o modo escuro",
+			"CHANGE_TO_LIGHT_MODE": "Mudar para o modo claro"
+		}
 	}
 }

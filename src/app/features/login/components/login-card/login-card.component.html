@@ -18,8 +18,7 @@
       >
       <button
         mat-flat-button
-        color="accent"
-        [disableRipple]="true"
+        color="primary"
         [disabled]="(formValid$ | async) !== true"
         (click)="login()"
       >

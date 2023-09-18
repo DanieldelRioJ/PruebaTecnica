@@ -28,5 +28,13 @@
 				"WINDSPEED": "Wind Speed"
 			}
 		}
+	},
+	"SHARED": {
+		"LANG": "Language",
+		"REQUIRED_FIELDS": "The field is mandatory",
+		"THEMES": {
+			"CHANGE_TO_DARK_MODE": "Switch to dark mode",
+			"CHANGE_TO_LIGHT_MODE": "Switch to light mode"
+		}
 	}
 }

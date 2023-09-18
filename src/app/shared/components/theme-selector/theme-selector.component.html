@@ -1,0 +1,21 @@
+<button
+  *ngIf="(isDarkMode$ | async) === true"
+  mat-mini-fab
+  [color]="color"
+  matTooltip="A"
+  [matTooltip]="'SHARED.THEMES.CHANGE_TO_LIGHT_MODE' | translate"
+  (click)="changeMode('LIGHT')"
+  aria-label="Change to light mode button"
+>
+  <mat-icon>light_mode</mat-icon>
+</button>
+<button
+  *ngIf="(isDarkMode$ | async) === false"
+  mat-mini-fab
+  [color]="color"
+  [matTooltip]="'SHARED.THEMES.CHANGE_TO_DARK_MODE' | translate"
+  (click)="changeMode('DARK')"
+  aria-label="Change to dark mode button"
+>
+  <mat-icon>dark_mode</mat-icon>
+</button>

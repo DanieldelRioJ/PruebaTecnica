@@ -28,5 +28,13 @@
 				"WINDSPEED": "Velocitat del vent"
 			}
 		}
+	},
+	"SHARED": {
+		"LANG": "Idioma",
+		"REQUIRED_FIELDS": "El camp és obligatori",
+		"THEMES": {
+			"CHANGE_TO_DARK_MODE": "Canviar a mode fosc",
+			"CHANGE_TO_LIGHT_MODE": "Canviar de manera clara"
+		}
 	}
 }
