@@ -27,11 +27,14 @@
 				"WINDSPEED": "Wind Speed"
 			}
 		},
+		"EXIT_SESSION": "Logout",
 		"FORM": {
 			"DATE_RANGE": "Date range",
 			"END_DATE": "End date",
+			"ENTER_DATE_RANGE": "Enter a date range",
 			"LOCATION": "Location",
 			"NOT_VALID": "The query entered is not correct",
+			"PLZ_VALID_LOCATION": "Please enter a valid location",
 			"SEARCH": "Search",
 			"START_DATE": "Start date"
 		},

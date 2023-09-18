@@ -27,11 +27,14 @@
 				"WINDSPEED": "Velocidad del viento"
 			}
 		},
+		"EXIT_SESSION": "Cerrar sesión",
 		"FORM": {
 			"DATE_RANGE": "Rango de fechas",
 			"END_DATE": "Fecha fin",
+			"ENTER_DATE_RANGE": "Introduce un rango de fechas",
 			"LOCATION": "Ubicación",
 			"NOT_VALID": "La query introducida no es correcta",
+			"PLZ_VALID_LOCATION": "Introduzca una ubicación válida",
 			"SEARCH": "Buscar",
 			"START_DATE": "Fecha inicio"
 		},

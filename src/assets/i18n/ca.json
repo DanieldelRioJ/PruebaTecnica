@@ -27,11 +27,14 @@
 				"WINDSPEED": "Velocitat del vent"
 			}
 		},
+		"EXIT_SESSION": "Tancar sessió",
 		"FORM": {
 			"DATE_RANGE": "Rang de dates",
 			"END_DATE": "Data Fi",
+			"ENTER_DATE_RANGE": "Introdueix un rang de dates",
 			"LOCATION": "Ubicació",
 			"NOT_VALID": "La query introduïda no és correcta",
+			"PLZ_VALID_LOCATION": "Introduïu una ubicació vàlida",
 			"SEARCH": "Cercar",
 			"START_DATE": "Data inici"
 		},

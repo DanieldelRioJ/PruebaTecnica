@@ -1,30 +1,30 @@
 <form [formGroup]="form" class="flex gap-8 px-8">
   <mat-form-field class="w-full">
-    <mat-label>Enter a date range</mat-label>
+    <mat-label>{{ 'MAIN.FORM.ENTER_DATE_RANGE' | translate }}</mat-label>
     <mat-date-range-input [rangePicker]="picker">
       <input
         matStartDate
         [formControlName]="controls.FROM"
-        placeholder="Start date"
+        [placeholder]="'MAIN.FORM.START_DATE' | translate"
       />
       <input
         matEndDate
         [formControlName]="controls.TO"
-        placeholder="End date"
+        [placeholder]="'MAIN.FORM.END_DATE' | translate"
       />
     </mat-date-range-input>
     <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-date-range-picker #picker></mat-date-range-picker>
   </mat-form-field>
   <mat-form-field class="w-full">
-    <mat-label>Location</mat-label>
+    <mat-label>{{ 'MAIN.FORM.LOCATION' | translate }}</mat-label>
     <input
       matInput
       [formControlName]="controls.LOCATION"
       placeholder="A Coruña"
     />
     <mat-error *ngIf="form.get(controls.LOCATION)!.hasError('required')">
-      Please enter a valid email address
+      {{ 'MAIN.FORM.PLZ_VALID_LOCATION' | translate }}
     </mat-error>
   </mat-form-field>
   <button

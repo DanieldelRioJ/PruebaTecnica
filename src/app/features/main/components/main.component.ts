@@ -118,15 +118,17 @@ export class MainComponent extends UnsubscribeDirective implements OnInit {
     this._locationService.location$
       .pipe(takeUntil(this._unsubscribe$))
       .subscribe((location) => {
-        if (
-          location != null &&
-          this._mainFormService.mainInputForm.value[
-            MainInputSectionFormControls.LOCATION
-          ] == null
-        ) {
+        const formControl = this._mainFormService.mainInputForm.get(
+          MainInputSectionFormControls.LOCATION
+        );
+        if (location != null && !formControl?.valid) {
           this._mainFormService.mainInputForm.patchValue({
             location: `${location.latitude}, ${location.longitude}`
-          } as any);
+          });
+        } else if (location == null && !formControl?.valid) {
+          this._mainFormService.mainInputForm.patchValue({
+            location: 'A Coruña'
+          });
         }
       });
   }

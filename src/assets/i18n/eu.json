@@ -27,11 +27,14 @@
 				"WINDSPEED": "Haizearen abiadura"
 			}
 		},
+		"EXIT_SESSION": "Itxi saioa",
 		"FORM": {
 			"DATE_RANGE": "Data tartea",
 			"END_DATE": "Amaiera data",
+			"ENTER_DATE_RANGE": "Sartu data-tarte bat",
 			"LOCATION": "Kokapena",
 			"NOT_VALID": "Sartutako kontsulta ez da zuzena",
+			"PLZ_VALID_LOCATION": "Mesedez, sartu baliozko kokapen bat",
 			"SEARCH": "Bilaketa",
 			"START_DATE": "Hasiera data"
 		},

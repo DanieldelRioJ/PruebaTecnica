@@ -6,12 +6,9 @@ import { isDate } from '../../../shared/utils/date-validator';
 @Injectable()
 export class MainFormService {
   mainInputForm = this._fb.group({
-    [MainInputSectionFormControls.FROM]: [
-      null,
-      [Validators.required, isDate()]
-    ],
-    [MainInputSectionFormControls.TO]: [null, [Validators.required, isDate()]],
-    [MainInputSectionFormControls.LOCATION]: [null, [Validators.required]]
+    [MainInputSectionFormControls.FROM]: ['', [Validators.required, isDate()]],
+    [MainInputSectionFormControls.TO]: ['', [Validators.required, isDate()]],
+    [MainInputSectionFormControls.LOCATION]: ['', [Validators.required]]
   });
   constructor(private readonly _fb: FormBuilder) {}
 }

@@ -1,6 +1,6 @@
 <button
   mat-icon-button
-  matTooltip="Change to dark mode"
+  [matTooltip]="'MAIN.EXIT_SESSION' | translate"
   aria-label="Change to dark mode button"
   (click)="logout()"
 >
