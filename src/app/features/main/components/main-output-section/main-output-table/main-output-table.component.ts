@@ -5,18 +5,22 @@ import {
   OnInit,
   ViewChild
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
-import { IWeatherDay } from '../../../models/weather-response.model';
+import {
+  IWeatherDay,
+  IWeatherResponse
+} from '../../../models/weather-response.model';
 import { MainModelService } from '../../../services/main-model.service';
 import { UnsubscribeDirective } from '../../../../../shared/directives/unsubscribe.directive';
-import { filter, map, takeUntil } from 'rxjs';
+import { combineLatest, filter, map, takeUntil, tap } from 'rxjs';
 import { checkIndividualModelType } from '../../../../../shared/types/individual-model.type';
 import { MainOutputTableColumns } from './main-output-table.config';
 import { TranslateModule } from '@ngx-translate/core';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { TranslationService } from '../../../../../core/services/translation.service';
 
 @Component({
   selector: 'app-main-output-table',
@@ -47,7 +51,11 @@ export class MainOutputTableComponent
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private readonly _mainModelService: MainModelService) {
+  constructor(
+    private readonly _mainModelService: MainModelService,
+    private readonly _translationService: TranslationService,
+    private readonly _datePipe: DatePipe
+  ) {
     super();
   }
 
@@ -56,10 +64,26 @@ export class MainOutputTableComponent
   }
 
   private _getData() {
-    this._mainModelService.data$
+    combineLatest([
+      this._mainModelService.data$,
+      this._translationService.lang$
+    ])
       .pipe(
-        filter(checkIndividualModelType),
-        map((data) => data.days),
+        filter(([data]) => checkIndividualModelType(data)),
+        tap(console.log),
+        map(([data, lang]) => {
+          //return (data as IWeatherResponse)!.days;
+          return (data as IWeatherResponse)!.days.map((day) => {
+            const newDay = { ...day }; //Avoid aliasing
+            newDay.datetime = this._datePipe.transform(
+              newDay.datetime,
+              'fullDate',
+              undefined,
+              lang
+            ) as string;
+            return newDay;
+          });
+        }),
         takeUntil(this._unsubscribe$)
       )
       .subscribe((days) => (this.dataSource.data = days));

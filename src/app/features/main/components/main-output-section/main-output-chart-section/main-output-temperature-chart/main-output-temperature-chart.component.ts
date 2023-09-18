@@ -4,8 +4,10 @@ import { Chart, ChartModule } from 'angular-highcharts';
 import { MainModelService } from '../../../../services/main-model.service';
 import { UnsubscribeDirective } from '../../../../../../shared/directives/unsubscribe.directive';
 import { checkIndividualModelType } from '../../../../../../shared/types/individual-model.type';
-import { filter, map, Observable } from 'rxjs';
+import { combineLatest, filter, map, Observable } from 'rxjs';
 import { MainOutputTemperatureChartService } from './main-output-temperature-chart.service';
+import { ThemeService } from '../../../../../../core/services/theme.service';
+import { TranslationService } from '../../../../../../core/services/translation.service';
 
 @Component({
   selector: 'app-main-output-temperature-chart',
@@ -20,14 +22,21 @@ export class MainOutputTemperatureChartComponent extends UnsubscribeDirective {
 
   constructor(
     private readonly _mainModelService: MainModelService,
-    private readonly _mainOutputTemperatureChartService: MainOutputTemperatureChartService
+    private readonly _mainOutputTemperatureChartService: MainOutputTemperatureChartService,
+    private _themeService: ThemeService,
+    private _translationService: TranslationService
   ) {
     super();
     this._getData();
   }
 
   private _getData() {
-    this.chart$ = this._mainModelService.data$.pipe(
+    this.chart$ = combineLatest([
+      this._mainModelService.data$,
+      this._themeService.theme$,
+      this._translationService.lang$
+    ]).pipe(
+      map(([data]) => data),
       filter(checkIndividualModelType),
       map((data) => {
         const days = data.days;

@@ -45,7 +45,6 @@ export class TranslationDropdownComponent extends UnsubscribeDirective {
     this.langFormControl.valueChanges
       .pipe(takeUntil(this._unsubscribe$))
       .subscribe((lang) => {
-        console.log(lang);
         this._translationService.changeLang(lang);
       });
   }

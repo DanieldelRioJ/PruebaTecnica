@@ -1,28 +1,29 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
-import { MainModelService } from '../../../../services/main-model.service';
-import { combineLatest, delay, filter, map, Observable } from 'rxjs';
-import { checkIndividualModelType } from '../../../../../../shared/types/individual-model.type';
+import { combineLatest, filter, map, Observable } from 'rxjs';
 import { Chart, ChartModule } from 'angular-highcharts';
-import { IWeatherDay } from '../../../../models/weather-response.model';
+import { MainModelService } from '../../../../services/main-model.service';
 import { ThemeService } from '../../../../../../core/services/theme.service';
 import { TranslationService } from '../../../../../../core/services/translation.service';
+import { checkIndividualModelType } from '../../../../../../shared/types/individual-model.type';
+import { IWeatherDay } from '../../../../models/weather-response.model';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-main-output-humidity-preciprob-chart',
+  selector: 'app-main-output-solar-radiation-chart',
   standalone: true,
   imports: [CommonModule, ChartModule],
-  templateUrl: './main-output-humidity-preciprob-chart.component.html',
-  styleUrls: ['./main-output-humidity-preciprob-chart.component.scss'],
+  templateUrl: './main-output-solar-radiation-chart.component.html',
+  styleUrls: ['./main-output-solar-radiation-chart.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MainOutputHumidityPreciprobChartComponent implements OnInit {
+export class MainOutputSolarRadiationChartComponent implements OnInit {
   chart$?: Observable<Chart>;
+
   constructor(
-    private readonly _mainModelService: MainModelService,
-    private readonly _themeService: ThemeService,
-    private readonly _translationService: TranslationService,
+    private _mainModelService: MainModelService,
+    private _themeService: ThemeService,
+    private _translationService: TranslationService,
     private readonly _translateService: TranslateService,
     private readonly _datePipe: DatePipe
   ) {}
@@ -49,11 +50,11 @@ export class MainOutputHumidityPreciprobChartComponent implements OnInit {
   private _chartBuilder(days: IWeatherDay[]) {
     return new Chart({
       chart: {
-        type: 'line'
+        type: 'column'
       },
       title: {
         text: this._translateService.instant(
-          'MAIN.CHARTS.HUMIDITY.HUMIDITY_PRECIP_PROB'
+          'MAIN.CHARTS.SOLAR_RADIATION.SOLAR_RADIATION'
         )
       },
       subtitle: {
@@ -76,13 +77,13 @@ export class MainOutputHumidityPreciprobChartComponent implements OnInit {
       yAxis: [
         {
           labels: {
-            format: '{value}%'
+            format: '{value}W/m2'
           }
         }
       ],
       tooltip: {
         shared: true,
-        valueSuffix: ' %'
+        valueSuffix: ' W/m2'
       },
 
       plotOptions: {
@@ -96,16 +97,12 @@ export class MainOutputHumidityPreciprobChartComponent implements OnInit {
       },
       series: [
         {
+          color: 'purple',
           type: 'column',
           name: this._translateService.instant(
-            'MAIN.CHARTS.HUMIDITY.PRECIP_PROB'
+            'MAIN.CHARTS.SOLAR_RADIATION.SOLAR_RADIATION'
           ),
-          data: days.map((day) => day.precipprob)
-        },
-        {
-          type: 'line',
-          name: this._translateService.instant('MAIN.CHARTS.HUMIDITY.HUMIDITY'),
-          data: days.map((day) => day.humidity)
+          data: days.map((day) => day.solarradiation)
         }
       ]
     });

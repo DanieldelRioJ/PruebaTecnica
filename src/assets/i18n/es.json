@@ -10,11 +10,29 @@
 		"TITLE": "Inicio sesión"
 	},
 	"MAIN": {
+		"CHARTS": {
+			"HUMIDITY": {
+				"HUMIDITY": "Humedad",
+				"HUMIDITY_PRECIP_PROB": "Humedad & Prob Precipitación",
+				"PRECIP_PROB": "Probabilidad precipitación"
+			},
+			"SOLAR_RADIATION": {
+				"SOLAR_RADIATION": "Radiación solar"
+			},
+			"TEMPERATURE": {
+				"FEELSLIKE": "Sensación térmica",
+				"TEMPERATURE": "Temperatura"
+			},
+			"WINDSPEED": {
+				"WINDSPEED": "Velocidad del viento"
+			}
+		},
 		"FORM": {
 			"DATE_RANGE": "Rango de fechas",
 			"END_DATE": "Fecha fin",
 			"LOCATION": "Ubicación",
 			"NOT_VALID": "La query introducida no es correcta",
+			"SEARCH": "Buscar",
 			"START_DATE": "Fecha inicio"
 		},
 		"TABLE": {
@@ -32,6 +50,7 @@
 	"SHARED": {
 		"LANG": "Idioma",
 		"REQUIRED_FIELDS": "El campo es obligatorio",
+		"SOURCE": "Fuente",
 		"THEMES": {
 			"CHANGE_TO_DARK_MODE": "Cambiar a modo oscuro",
 			"CHANGE_TO_LIGHT_MODE": "Cambiar a modo claro"

@@ -3,8 +3,7 @@ import { Column, ColumnTypes } from '../../../../../core/models/column.model';
 export const MainOutputTableColumns: Column[] = [
   {
     id: 'datetime',
-    name: 'MAIN.TABLE.COLUMNS.DATETIME',
-    type: ColumnTypes.DATE
+    name: 'MAIN.TABLE.COLUMNS.DATETIME'
   },
   {
     id: 'temp',

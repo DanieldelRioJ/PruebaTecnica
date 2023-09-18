@@ -10,11 +10,29 @@
 		"TITLE": "Inici sessió"
 	},
 	"MAIN": {
+		"CHARTS": {
+			"HUMIDITY": {
+				"HUMIDITY": "Humitat",
+				"HUMIDITY_PRECIP_PROB": "Humitat & Prob Precipitació",
+				"PRECIP_PROB": "Probabilitat precipitació"
+			},
+			"SOLAR_RADIATION": {
+				"SOLAR_RADIATION": "Radiació solar"
+			},
+			"TEMPERATURE": {
+				"FEELSLIKE": "Sensació tèrmica",
+				"TEMPERATURE": "Temperatura"
+			},
+			"WINDSPEED": {
+				"WINDSPEED": "Velocitat del vent"
+			}
+		},
 		"FORM": {
 			"DATE_RANGE": "Rang de dates",
 			"END_DATE": "Data Fi",
 			"LOCATION": "Ubicació",
 			"NOT_VALID": "La query introduïda no és correcta",
+			"SEARCH": "Cercar",
 			"START_DATE": "Data inici"
 		},
 		"TABLE": {
@@ -32,6 +50,7 @@
 	"SHARED": {
 		"LANG": "Idioma",
 		"REQUIRED_FIELDS": "El camp és obligatori",
+		"SOURCE": "Font",
 		"THEMES": {
 			"CHANGE_TO_DARK_MODE": "Canviar a mode fosc",
 			"CHANGE_TO_LIGHT_MODE": "Canviar de manera clara"

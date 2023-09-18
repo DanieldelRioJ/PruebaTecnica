@@ -10,11 +10,29 @@
 		"TITLE": "Se connecter"
 	},
 	"MAIN": {
+		"CHARTS": {
+			"HUMIDITY": {
+				"HUMIDITY": "Humidité",
+				"HUMIDITY_PRECIP_PROB": "Humidité et probabilité de précipitations",
+				"PRECIP_PROB": "Probabilité de précipitations"
+			},
+			"SOLAR_RADIATION": {
+				"SOLAR_RADIATION": "Radiation solaire"
+			},
+			"TEMPERATURE": {
+				"FEELSLIKE": "Sensation thermique",
+				"TEMPERATURE": "Température"
+			},
+			"WINDSPEED": {
+				"WINDSPEED": "Vitesse du vent"
+			}
+		},
 		"FORM": {
 			"DATE_RANGE": "Plage de dates",
 			"END_DATE": "Date de fin",
 			"LOCATION": "Emplacement",
 			"NOT_VALID": "La requête saisie n'est pas correcte",
+			"SEARCH": "Recherche",
 			"START_DATE": "La date de début"
 		},
 		"TABLE": {
@@ -32,6 +50,7 @@
 	"SHARED": {
 		"LANG": "Langage",
 		"REQUIRED_FIELDS": "Ce champ est requis",
+		"SOURCE": "La source",
 		"THEMES": {
 			"CHANGE_TO_DARK_MODE": "Passer en mode sombre",
 			"CHANGE_TO_LIGHT_MODE": "Passer en mode lumière"

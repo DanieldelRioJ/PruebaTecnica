@@ -1,10 +1,13 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { filter, map, Observable } from 'rxjs';
+import { CommonModule, DatePipe } from '@angular/common';
+import { combineLatest, filter, map, Observable } from 'rxjs';
 import { Chart, ChartModule } from 'angular-highcharts';
 import { MainModelService } from '../../../../services/main-model.service';
 import { checkIndividualModelType } from '../../../../../../shared/types/individual-model.type';
 import { IWeatherDay } from '../../../../models/weather-response.model';
+import { ThemeService } from '../../../../../../core/services/theme.service';
+import { TranslationService } from '../../../../../../core/services/translation.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-main-output-windspeed-chart',
@@ -16,14 +19,25 @@ import { IWeatherDay } from '../../../../models/weather-response.model';
 })
 export class MainOutputWindspeedChartComponent implements OnInit {
   chart$?: Observable<Chart>;
-  constructor(private _mainModelService: MainModelService) {}
+  constructor(
+    private _mainModelService: MainModelService,
+    private _themeService: ThemeService,
+    private _translationService: TranslationService,
+    private readonly _translateService: TranslateService,
+    private readonly _datePipe: DatePipe
+  ) {}
 
   ngOnInit(): void {
     this._getData();
   }
 
   private _getData() {
-    this.chart$ = this._mainModelService.data$.pipe(
+    this.chart$ = combineLatest([
+      this._mainModelService.data$,
+      this._themeService.theme$,
+      this._translationService.lang$
+    ]).pipe(
+      map(([data]) => data),
       filter(checkIndividualModelType),
       map((data) => {
         const days = data.days;
@@ -38,16 +52,24 @@ export class MainOutputWindspeedChartComponent implements OnInit {
         type: 'line'
       },
       title: {
-        text: 'Humidity & Precipprob'
+        text: this._translateService.instant('MAIN.CHARTS.WINDSPEED.WINDSPEED')
       },
       subtitle: {
         text:
-          'Source: ' +
+          `${this._translateService.instant('SHARED.SOURCE')}: ` +
           '<a href="https://www.visualcrossing.com/" ' +
           'target="_blank">VisualCrossing</a>'
       },
       xAxis: {
-        categories: days.map((days) => days.datetime)
+        categories: days.map(
+          (days) =>
+            this._datePipe.transform(
+              days.datetime,
+              'shortDate',
+              undefined,
+              this._translateService.currentLang
+            ) as string
+        )
       },
       yAxis: [
         {
@@ -57,7 +79,8 @@ export class MainOutputWindspeedChartComponent implements OnInit {
         }
       ],
       tooltip: {
-        shared: true
+        shared: true,
+        valueSuffix: ' km/h'
       },
 
       plotOptions: {
@@ -73,7 +96,9 @@ export class MainOutputWindspeedChartComponent implements OnInit {
         {
           color: 'grey',
           type: 'column',
-          name: 'Windspeed',
+          name: this._translateService.instant(
+            'MAIN.CHARTS.WINDSPEED.WINDSPEED'
+          ),
           data: days.map((day) => day.windspeed)
         }
       ]

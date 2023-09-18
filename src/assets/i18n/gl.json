@@ -10,11 +10,29 @@
 		"TITLE": "Acceder"
 	},
 	"MAIN": {
+		"CHARTS": {
+			"HUMIDITY": {
+				"HUMIDITY": "Humidade",
+				"HUMIDITY_PRECIP_PROB": "Humidade e probabilidade de precipitación",
+				"PRECIP_PROB": "Probabilidade de precipitación"
+			},
+			"SOLAR_RADIATION": {
+				"SOLAR_RADIATION": "Radiación solar"
+			},
+			"TEMPERATURE": {
+				"FEELSLIKE": "Sensación térmica",
+				"TEMPERATURE": "Temperatura"
+			},
+			"WINDSPEED": {
+				"WINDSPEED": "Velocidade do vento"
+			}
+		},
 		"FORM": {
 			"DATE_RANGE": "Intervalo de datas",
 			"END_DATE": "Data de finalización",
 			"LOCATION": "Localización",
 			"NOT_VALID": "A consulta introducida non é correcta",
+			"SEARCH": "Busca",
 			"START_DATE": "Data de inicio"
 		},
 		"TABLE": {
@@ -32,6 +50,7 @@
 	"SHARED": {
 		"LANG": "Lingua",
 		"REQUIRED_FIELDS": "O campo é obrigatorio",
+		"SOURCE": "Fonte",
 		"THEMES": {
 			"CHANGE_TO_DARK_MODE": "Cambia ao modo escuro",
 			"CHANGE_TO_LIGHT_MODE": "Cambia ao modo de luz"

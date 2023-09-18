@@ -17,6 +17,7 @@ import { keyInterceptor } from '../app/core/interceptors/key.interceptor';
 import { ToastrModule } from 'ngx-toastr';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { registerLangLocales } from './lang.config';
+import { DatePipe } from '@angular/common';
 
 registerLangLocales();
 export function createTranslateLoader(http: HttpClient) {
@@ -24,6 +25,7 @@ export function createTranslateLoader(http: HttpClient) {
 }
 export const appConfig: ApplicationConfig = {
   providers: [
+    DatePipe,
     { provide: MAT_DATE_LOCALE, useValue: 'es-ES' },
     { provide: LOCALE_ID, useValue: 'en-US' },
     provideRouter(routes),

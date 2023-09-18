@@ -10,11 +10,29 @@
 		"TITLE": "Conecte-se"
 	},
 	"MAIN": {
+		"CHARTS": {
+			"HUMIDITY": {
+				"HUMIDITY": "Umidade",
+				"HUMIDITY_PRECIP_PROB": "Umidade e probabilidade de precipitação",
+				"PRECIP_PROB": "Probabilidade de precipitação"
+			},
+			"SOLAR_RADIATION": {
+				"SOLAR_RADIATION": "Radiação solar"
+			},
+			"TEMPERATURE": {
+				"FEELSLIKE": "Sensaçâo termica",
+				"TEMPERATURE": "Temperatura"
+			},
+			"WINDSPEED": {
+				"WINDSPEED": "Velocidade do vento"
+			}
+		},
 		"FORM": {
 			"DATE_RANGE": "Intervalo de datas",
 			"END_DATE": "Data final",
 			"LOCATION": "Localização",
 			"NOT_VALID": "A consulta inserida não está correta",
+			"SEARCH": "Pesquisar",
 			"START_DATE": "Data de Início"
 		},
 		"TABLE": {
@@ -32,6 +50,7 @@
 	"SHARED": {
 		"LANG": "Idioma",
 		"REQUIRED_FIELDS": "O campo é obrigatório",
+		"SOURCE": "Fonte",
 		"THEMES": {
 			"CHANGE_TO_DARK_MODE": "Mudar para o modo escuro",
 			"CHANGE_TO_LIGHT_MODE": "Mudar para o modo claro"

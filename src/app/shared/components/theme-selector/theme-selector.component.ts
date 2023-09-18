@@ -26,10 +26,10 @@ import { map } from 'rxjs';
 })
 export class ThemeSelectorComponent {
   @Input() color: 'primary' | 'accent' = 'primary';
-  isDarkMode$ = this._themeService.mode$.pipe(map((mode) => mode === 'DARK'));
+  isDarkMode$ = this._themeService.theme$.pipe(map((mode) => mode === 'DARK'));
   constructor(private readonly _themeService: ThemeService) {}
 
   changeMode(mode: THEME_MODES) {
-    this._themeService.setMode(mode);
+    this._themeService.setTheme(mode);
   }
 }

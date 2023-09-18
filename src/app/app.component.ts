@@ -33,7 +33,7 @@ export class AppComponent extends UnsubscribeDirective implements OnInit {
   }
 
   private _addClassOnThemeChange() {
-    this._themeService.mode$
+    this._themeService.theme$
       .pipe(takeUntil(this._unsubscribe$))
       .subscribe((mode) => {
         if (mode === 'LIGHT') {

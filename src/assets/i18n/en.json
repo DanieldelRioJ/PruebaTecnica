@@ -10,11 +10,29 @@
 		"TITLE": "Login"
 	},
 	"MAIN": {
+		"CHARTS": {
+			"HUMIDITY": {
+				"HUMIDITY": "Humidity",
+				"HUMIDITY_PRECIP_PROB": "Humidity & Probability of Precipitation",
+				"PRECIP_PROB": "Precipitation probability"
+			},
+			"SOLAR_RADIATION": {
+				"SOLAR_RADIATION": "Solar radiation"
+			},
+			"TEMPERATURE": {
+				"FEELSLIKE": "Feels like",
+				"TEMPERATURE": "Temperature"
+			},
+			"WINDSPEED": {
+				"WINDSPEED": "Wind Speed"
+			}
+		},
 		"FORM": {
 			"DATE_RANGE": "Date range",
 			"END_DATE": "End date",
 			"LOCATION": "Location",
 			"NOT_VALID": "The query entered is not correct",
+			"SEARCH": "Search",
 			"START_DATE": "Start date"
 		},
 		"TABLE": {
@@ -32,6 +50,7 @@
 	"SHARED": {
 		"LANG": "Language",
 		"REQUIRED_FIELDS": "The field is mandatory",
+		"SOURCE": "Source",
 		"THEMES": {
 			"CHANGE_TO_DARK_MODE": "Switch to dark mode",
 			"CHANGE_TO_LIGHT_MODE": "Switch to light mode"

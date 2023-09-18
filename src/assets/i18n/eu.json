@@ -10,11 +10,29 @@
 		"TITLE": "Saioa hasi"
 	},
 	"MAIN": {
+		"CHARTS": {
+			"HUMIDITY": {
+				"HUMIDITY": "Hezetasuna",
+				"HUMIDITY_PRECIP_PROB": "Hezetasuna eta prezipitazioaren probabilitatea",
+				"PRECIP_PROB": "Prezipitazioaren probabilitatea"
+			},
+			"SOLAR_RADIATION": {
+				"SOLAR_RADIATION": "Eguzki-erradiazioa"
+			},
+			"TEMPERATURE": {
+				"FEELSLIKE": "Sentsazio termikoa",
+				"TEMPERATURE": "Tenperatura"
+			},
+			"WINDSPEED": {
+				"WINDSPEED": "Haizearen abiadura"
+			}
+		},
 		"FORM": {
 			"DATE_RANGE": "Data tartea",
 			"END_DATE": "Amaiera data",
 			"LOCATION": "Kokapena",
 			"NOT_VALID": "Sartutako kontsulta ez da zuzena",
+			"SEARCH": "Bilaketa",
 			"START_DATE": "Hasiera data"
 		},
 		"TABLE": {
@@ -32,6 +50,7 @@
 	"SHARED": {
 		"LANG": "Hizkuntza",
 		"REQUIRED_FIELDS": "Eremua beharrezkoa da",
+		"SOURCE": "Letra-tipoa",
 		"THEMES": {
 			"CHANGE_TO_DARK_MODE": "Aldatu modu ilunera",
 			"CHANGE_TO_LIGHT_MODE": "Aldatu argi modura"
