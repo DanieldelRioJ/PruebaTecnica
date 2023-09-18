@@ -4,12 +4,13 @@ import {
   Inject,
   OnInit
 } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { ChildrenOutletContexts, RouterModule } from '@angular/router';
 import { TranslationService } from './core/services/translation.service';
 import { ThemeService } from './core/services/theme.service';
 import { DOCUMENT } from '@angular/common';
 import { UnsubscribeDirective } from './shared/directives/unsubscribe.directive';
 import { takeUntil } from 'rxjs';
+import { slideInAnimation } from './animation';
 
 @Component({
   standalone: true,
@@ -17,11 +18,13 @@ import { takeUntil } from 'rxjs';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   imports: [RouterModule],
+  animations: [slideInAnimation],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent extends UnsubscribeDirective implements OnInit {
   constructor(
-    @Inject(DOCUMENT) private document: Document,
+    private readonly contexts: ChildrenOutletContexts,
+    @Inject(DOCUMENT) private readonly document: Document,
     private readonly _translationService: TranslationService,
     private readonly _themeService: ThemeService
   ) {
@@ -30,6 +33,12 @@ export class AppComponent extends UnsubscribeDirective implements OnInit {
 
   ngOnInit(): void {
     this._addClassOnThemeChange();
+  }
+
+  getRouteAnimationData() {
+    return this.contexts.getContext('primary')?.route?.snapshot?.data?.[
+      'animation'
+    ];
   }
 
   private _addClassOnThemeChange() {

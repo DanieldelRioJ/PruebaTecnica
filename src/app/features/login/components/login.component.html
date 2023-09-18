@@ -1,4 +1,12 @@
-<div class="login-container absolute w-full h-full bg-cover top-0 left-0">
+<div class="absolute w-screen h-screen">
+  <div
+    [@visibleHidden]="darkModeBackground$ | async"
+    class="dark-login-container absolute w-full h-full bg-cover top-0 left-0"
+  ></div>
+  <div
+    [@visibleHidden]="lightModeBackground$ | async"
+    class="light-login-container absolute w-full h-full bg-cover top-0 left-0"
+  ></div>
   <div class="flex gap-4 items-center absolute top-2 right-2">
     <app-theme-selector></app-theme-selector>
     <app-translation-dropdown class="w-32"></app-translation-dropdown>

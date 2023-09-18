@@ -1,8 +1,8 @@
-@mixin _login-container{
-  background-image: url("/assets/img/login/login-wallpaper-dark.jpg");
-
+.dark-login-container{
+  background-image: url("/assets/img/login/login-wallpaper-dark-resized.jpg");
 }
 
-.login-container{
-  @include _login-container;
+.light-login-container{
+  background-image: url("/assets/img/login/login-wallpaper-light-resized.jpg");
 }
+

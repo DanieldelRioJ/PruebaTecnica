@@ -13,7 +13,8 @@ export const routes: Routes = [
       import('./features/login/components/login.component').then(
         (mod) => mod.LoginComponent
       ),
-    canActivate: [isAlreadyLoggedGuard]
+    canActivate: [isAlreadyLoggedGuard],
+    data: { animation: 'LoginPage' }
   },
   {
     path: MainRoutes.MAIN,
@@ -21,7 +22,8 @@ export const routes: Routes = [
       import('./features/main/components/main.component').then(
         (mod) => mod.MainComponent
       ),
-    canActivate: [authGuard]
+    canActivate: [authGuard],
+    data: { animation: 'MainPage' }
   },
   { path: '', redirectTo: MainRoutes.MAIN, pathMatch: 'full' },
   {
