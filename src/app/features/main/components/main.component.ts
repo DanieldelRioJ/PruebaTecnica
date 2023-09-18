@@ -58,6 +58,7 @@ export class MainComponent extends UnsubscribeDirective implements OnInit {
   }
 
   ngOnInit(): void {
+    this._listenToUserLocation();
     this._listenToQueryParams();
   }
 
@@ -94,6 +95,18 @@ export class MainComponent extends UnsubscribeDirective implements OnInit {
       )
       .subscribe((weatherResponse) => {
         this._mainModelService.data = weatherResponse;
+      });
+  }
+
+  private _listenToUserLocation() {
+    this._locationService.location$
+      .pipe(takeUntil(this._unsubscribe$))
+      .subscribe((location) => {
+        if (location != null) {
+          this._mainFormService.mainInputForm.patchValue({
+            location: `${location.latitude}, ${location.longitude}`
+          } as any);
+        }
       });
   }
 }
