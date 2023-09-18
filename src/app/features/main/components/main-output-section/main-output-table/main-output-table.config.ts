@@ -1,4 +1,4 @@
-import { Column, ColumnTypes } from '../../../../../core/models/column.model';
+import { Column } from '../../../../../core/models/column.model';
 
 export const MainOutputTableColumns: Column[] = [
   {

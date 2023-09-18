@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
 import { MainModelService } from '../../../../services/main-model.service';
-import { combineLatest, delay, filter, map, Observable } from 'rxjs';
+import { combineLatest, filter, map, Observable } from 'rxjs';
 import { checkIndividualModelType } from '../../../../../../shared/types/individual-model.type';
 import { Chart, ChartModule } from 'angular-highcharts';
 import { IWeatherDay } from '../../../../models/weather-response.model';

@@ -8,9 +8,8 @@ describe('MainOutputSolarRadiationChartComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ MainOutputSolarRadiationChartComponent ]
-    })
-    .compileComponents();
+      imports: [MainOutputSolarRadiationChartComponent]
+    }).compileComponents();
 
     fixture = TestBed.createComponent(MainOutputSolarRadiationChartComponent);
     component = fixture.componentInstance;
