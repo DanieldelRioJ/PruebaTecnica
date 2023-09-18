@@ -78,7 +78,7 @@ The web is completely responsive, Login and Main pages, Charts and tables adapt 
 
 <a id="deploy-server"></a>
 ## 4. Deploy in a server
-You just need to run on the server inside this directory the following command:
+If you want to install the webpage easily in a server or just run it in your local machine in a virtual environment, you just need to run on the server inside this directory the following command:
 
 ```docker compose up```
 
