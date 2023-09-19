@@ -8,7 +8,7 @@
     2. [ Dark mode ](#dark-mode)
     3. [ Animations ](#animations)
     4. [ Responsiveness ](#responsiveness)
-4. [ Deploy in a server](#deploy-server)
+4. [ Deploy in a server (DOCKER) ](#deploy-server)
 5. [ Contact ](#contact)
 
 <a id="execute"></a>
