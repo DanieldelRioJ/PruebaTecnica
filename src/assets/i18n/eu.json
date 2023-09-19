@@ -61,6 +61,7 @@
 	},
 	"SHARED": {
 		"LANG": "Hizkuntza",
+		"NAVIGATE_BACK": "Atzera egin",
 		"REQUIRED_FIELDS": "Eremua beharrezkoa da",
 		"SOURCE": "Letra-tipoa",
 		"THEMES": {

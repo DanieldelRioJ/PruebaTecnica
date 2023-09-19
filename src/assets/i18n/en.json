@@ -61,6 +61,7 @@
 	},
 	"SHARED": {
 		"LANG": "Language",
+		"NAVIGATE_BACK": "Go back",
 		"REQUIRED_FIELDS": "The field is mandatory",
 		"SOURCE": "Source",
 		"THEMES": {

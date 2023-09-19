@@ -4,6 +4,7 @@ import { LogoutButtonComponent } from '../../logout-button/logout-button.compone
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ThemeSelectorComponent } from '../theme-selector/theme-selector.component';
 import { TranslationDropdownComponent } from '../translation-dropdown/translation-dropdown.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menubar',
@@ -19,4 +20,9 @@ import { TranslationDropdownComponent } from '../translation-dropdown/translatio
   styleUrls: ['./menubar.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MenubarComponent {}
+export class MenubarComponent {
+  constructor(private readonly _router: Router) {}
+  navigateRoot() {
+    this._router.navigate(['/']);
+  }
+}
