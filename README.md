@@ -73,8 +73,8 @@ There are also animations between Login and Main pages and fadein/fadeout when c
 ### 3.4. Responsiveness
 The web is completely responsive, Login and Main pages, Charts and tables adapt properly to mobile devices with small screens.
 
-![img_1.png](img_1.png)
-![img.png](img.png)
+![img_1.png](readme_data/login-responsive.png)
+![img.png](readme_data/main-responsive.png)
 
 <a id="deploy-server"></a>
 ## 4. Deploy in a server
