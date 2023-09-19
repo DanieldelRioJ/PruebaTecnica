@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AuthService } from '../../core/store/auth.service';
+import { AuthService } from '../../../core/store/auth.service';
 import { Router } from '@angular/router';
-import { MainRoutes } from '../../routes';
+import { MainRoutes } from '../../../routes';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';

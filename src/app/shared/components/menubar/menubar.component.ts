@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LogoutButtonComponent } from '../../logout-button/logout-button.component';
+import { LogoutButtonComponent } from '../logout-button/logout-button.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ThemeSelectorComponent } from '../theme-selector/theme-selector.component';
 import { TranslationDropdownComponent } from '../translation-dropdown/translation-dropdown.component';
