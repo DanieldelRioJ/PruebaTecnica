@@ -6,6 +6,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MainModelService } from '../../services/main-model.service';
 import { map } from 'rxjs';
 import { TranslateModule } from '@ngx-translate/core';
+import { MainOutputSummaryComponent } from './main-output-summary/main-output-summary.component';
 
 @Component({
   selector: 'app-main-output-section',
@@ -16,7 +17,8 @@ import { TranslateModule } from '@ngx-translate/core';
     MainOutputTableComponent,
     MatDividerModule,
     TranslateModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    MainOutputSummaryComponent
   ],
   templateUrl: './main-output-section.component.html',
   styleUrls: ['./main-output-section.component.scss'],

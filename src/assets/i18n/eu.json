@@ -39,6 +39,13 @@
 			"START_DATE": "Hasiera data"
 		},
 		"MAKE_QUERY_HELP": "Egin kontsulta datuak ikusteko",
+		"SUMMARY": {
+			"COLDEST_DAY": "Egun hotzena",
+			"HOTTEST_DAY": "Egunik beroena",
+			"RAINIEST_DAY": "Egun euritsuena",
+			"SUMMARY": "Laburpen",
+			"WETTEST_DAY": "Hezetasun gehiago duen eguna"
+		},
 		"TABLE": {
 			"COLUMNS": {
 				"DATETIME": "Egun",

@@ -39,6 +39,13 @@
 			"START_DATE": "Data inici"
 		},
 		"MAKE_QUERY_HELP": "Fes una consulta per veure dades",
+		"SUMMARY": {
+			"COLDEST_DAY": "Dia més fred",
+			"HOTTEST_DAY": "Dia més calorós",
+			"RAINIEST_DAY": "Dia més plujós",
+			"SUMMARY": "Resum",
+			"WETTEST_DAY": "Dia amb més humitat"
+		},
 		"TABLE": {
 			"COLUMNS": {
 				"DATETIME": "Dia",

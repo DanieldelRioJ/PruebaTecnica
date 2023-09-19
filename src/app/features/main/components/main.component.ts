@@ -5,12 +5,7 @@ import {
   Provider
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatTooltipModule } from '@angular/material/tooltip';
 import { WeatherApiService } from '../services/weather-api.service';
-import { LogoutButtonComponent } from '../../../shared/logout-button/logout-button.component';
 import { MainInputSectionComponent } from './main-input-section/main-input-section.component';
 import { MainFormService } from '../services/main-form.service';
 import { ActivatedRoute } from '@angular/router';
@@ -26,12 +21,12 @@ import { LocationService } from '../../../core/services/location.service';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { HttpErrorResponse } from '@angular/common/http';
 import { MainOutputSectionComponent } from './main-output-section/main-output-section.component';
-import { TranslationDropdownComponent } from '../../../shared/components/translation-dropdown/translation-dropdown.component';
-import { ThemeSelectorComponent } from '../../../shared/components/theme-selector/theme-selector.component';
 import { MainInputSectionFormControls } from './main-input-section/main-input-section-form/main-input-section-form.config';
 import { WeatherApiInterfaceService } from '../services/weather-api-interface.service';
 import { environment } from '../../../../environments/environment';
 import { WeatherApiMockedService } from '../services/weather-api-mocked.service';
+import { MatDividerModule } from '@angular/material/divider';
+import { MenubarComponent } from '../../../shared/components/menubar/menubar.component';
 
 const apiWeatherProvider: Provider = {
   provide: WeatherApiInterfaceService,
@@ -45,15 +40,10 @@ const apiWeatherProvider: Provider = {
   imports: [
     CommonModule,
     TranslateModule,
-    MatButtonModule,
-    MatIconModule,
-    MatToolbarModule,
-    MatTooltipModule,
-    LogoutButtonComponent,
     MainInputSectionComponent,
     MainOutputSectionComponent,
-    TranslationDropdownComponent,
-    ThemeSelectorComponent
+    MatDividerModule,
+    MenubarComponent
   ],
   providers: [apiWeatherProvider, MainFormService, MainModelService],
   templateUrl: './main.component.html',

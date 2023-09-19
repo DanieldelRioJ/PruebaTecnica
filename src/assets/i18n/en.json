@@ -39,6 +39,13 @@
 			"START_DATE": "Start date"
 		},
 		"MAKE_QUERY_HELP": "Make a query to see data",
+		"SUMMARY": {
+			"COLDEST_DAY": "Coldest Day",
+			"HOTTEST_DAY": "Hottest Day",
+			"RAINIEST_DAY": "Rainiest day",
+			"SUMMARY": "Summary",
+			"WETTEST_DAY": "Day with more humidity"
+		},
 		"TABLE": {
 			"COLUMNS": {
 				"DATETIME": "Day",

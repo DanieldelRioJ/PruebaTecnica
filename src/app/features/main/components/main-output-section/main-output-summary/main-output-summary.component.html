@@ -1,0 +1,45 @@
+<div class="relative mt-5 sm:mt-0" *ngIf="data$ | async as data">
+  <app-loading [loading$]="isLoading$"></app-loading>
+  <h2 class="text-2xl mb-2">{{ 'MAIN.SUMMARY.SUMMARY' | translate }}</h2>
+  <div class="grid gap-4 grid-cols-1 md:grid-cols-2">
+    <div class="flex gap-x-2 items-center">
+      <img class="icon" src="assets/img/main/summary-icons/hot.ico" />
+      <p class="">
+        {{ 'MAIN.SUMMARY.HOTTEST_DAY' | translate }}:
+        <span class="mat-caption"
+          >{{ data.hottestDay.date }} ({{ data.hottestDay.value }}ºC)</span
+        >
+      </p>
+    </div>
+
+    <div class="flex gap-x-2 items-center">
+      <img class="icon" src="assets/img/main/summary-icons/cold.png" />
+      <p class="">
+        {{ 'MAIN.SUMMARY.COLDEST_DAY' | translate }}:
+        <span class="mat-caption"
+          >{{ data.coldestDay.date }} ({{ data.coldestDay.value }}ºC)</span
+        >
+      </p>
+    </div>
+
+    <div class="flex gap-x-2 items-center">
+      <img class="icon" src="assets/img/main/summary-icons/rainy.png" />
+      <p class="">
+        {{ 'MAIN.SUMMARY.RAINIEST_DAY' | translate }}:
+        <span class="mat-caption"
+          >{{ data.rainiestDay.date }} ({{ data.rainiestDay.value }}%)</span
+        >
+      </p>
+    </div>
+
+    <div class="flex gap-x-2 items-center">
+      <img class="icon" src="assets/img/main/summary-icons/humidity.png" />
+      <p class="">
+        {{ 'MAIN.SUMMARY.WETTEST_DAY' | translate }}:
+        <span class="mat-caption"
+          >{{ data.wettestDay.date }} ({{ data.wettestDay.value }}º%)</span
+        >
+      </p>
+    </div>
+  </div>
+</div>

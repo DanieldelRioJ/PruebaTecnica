@@ -39,6 +39,13 @@
 			"START_DATE": "Fecha inicio"
 		},
 		"MAKE_QUERY_HELP": "Haz una consulta para ver datos",
+		"SUMMARY": {
+			"COLDEST_DAY": "Día más frío",
+			"HOTTEST_DAY": "Día más caluroso",
+			"RAINIEST_DAY": "Día más lluvioso",
+			"SUMMARY": "Resumen",
+			"WETTEST_DAY": "Día con más humedad"
+		},
 		"TABLE": {
 			"COLUMNS": {
 				"DATETIME": "Día",
